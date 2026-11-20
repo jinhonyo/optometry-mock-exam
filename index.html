@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>驗光人員國考模擬測驗系統（民國 106–115 年）</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- 頂部導覽列 -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand" id="brandHomeBtn" role="button" tabindex="0">
+        <span class="brand-badge">OPT</span>
+        <div>
+          <h1 class="brand-title">驗光人員國考模擬測驗系統</h1>
+          <p class="brand-subtitle">民國 106–115 年歷屆試題資料庫（驗光師 / 驗光生）</p>
+        </div>
+      </div>
+      <nav class="main-nav" aria-label="主導覽列">
+        <button class="nav-btn active" data-view="setup">測驗設定</button>
+        <button class="nav-btn" data-view="search">題庫搜尋</button>
+        <button class="nav-btn" data-view="history">錯題與紀錄</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 全域載入中提示遮罩 -->
+  <div id="loadingOverlay" class="loading-overlay hidden" role="status" aria-live="polite">
+    <div class="loading-card">
+      <div class="spinner"></div>
+      <p id="loadingMessage">載入題庫資料中，請稍候…</p>
+    </div>
+  </div>
+
+  <!-- 全域通知訊息條 -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- 主要內容容器 -->
+  <main class="app-main">
+    <!-- 視圖一：首頁測驗設定 -->
+    <section id="view-setup" class="view-section active"></section>
+
+    <!-- 視圖二：作答介面 -->
+    <section id="view-exam" class="view-section"></section>
+
+    <!-- 視圖三：成績單與逐題檢討 -->
+    <section id="view-result" class="view-section"></section>
+
+    <!-- 視圖四：題庫關鍵字搜尋 -->
+    <section id="view-search" class="view-section"></section>
+
+    <!-- 視圖五：錯題本、歷史紀錄與 JSON 備份 -->
+    <section id="view-history" class="view-section"></section>
+  </main>
+
+  <!-- 頁尾資訊 -->
+  <footer class="app-footer">
+    <p>題庫資料來源：考選部考畢試題查詢平臺（民國 106–115 年），僅供國考練習使用，實際試題與圖片請以原卷 PDF 為準。</p>
+  </footer>
+
+  <!-- 主應用程式模組進入點 -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
